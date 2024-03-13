@@ -1,4 +1,4 @@
-from helpers import draw_board
+from helpers import draw_board, check_turn
 import os
 
 spots = {1:'1', 2:'2', 3:'3', 4:'4', 5:'5',
@@ -15,3 +15,6 @@ while playing:
     choice = input()
     if choice == 'q':
         playing = False
+
+    turn += 1
+    spots[int(choice)] = check_turn(turn)
